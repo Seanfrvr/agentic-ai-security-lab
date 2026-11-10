@@ -1,0 +1,20 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Local runtime files
+*.log
+*.pid
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Local editor and virtual machine files
+.vscode/
+.idea/
+*.vbox
+*.vbox-prev
