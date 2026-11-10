@@ -1,41 +1,40 @@
 # Lab roadmap
 
-This repository follows the ten stages in the AtlantiumAI masterclass. The lesson pages will record my own implementation rather than copy the instructor's steps without testing them.
+Stage 00 prepares the local environment. Stages 01 to 09 follow the remaining lessons in the AtlantiumAI masterclass.
 
-## Stages
+The stage numbers in this repository are sequential. The original lesson numbers are included so each page can be matched to the playlist.
 
-| Stage | Masterclass topic | What I will document |
-|---|---|---|
-| 00 | Lab setup for agentic AI security automation | Ubuntu environment, Docker setup, Wazuh services, n8n and container networking |
-| 01 | Wazuh and n8n architecture with attack simulation | How the services connect, where alerts move and how the test activity appears in Wazuh |
-| 02 | Auditd and Wazuh integration with Atomic Red Team | Linux audit telemetry, Wazuh collection and controlled test results |
-| 03 | Exploring the Wazuh API with Postman | API authentication, useful endpoints and verified API responses |
-| 04 | Building an AI cybersecurity agent | The n8n workflow, inputs, processing steps, model connection and output |
-| 05 | EDR alert triage AI agent | Alert input, enrichment, triage logic and the resulting investigation summary |
-| 05.5 | Improving the lab for an AI threat hunter | Changes to the lab and why they are needed for the next stage |
-| 05.6 | Wazuh agents, Auditd and Sysmon | Endpoint coverage, agent configuration and the telemetry collected |
-| 06 | Reconnaissance, pivoting, exploitation and privilege escalation | Isolated attack simulation, event evidence and investigation timeline |
-| 07 | AI threat hunter 1.0 and model comparison | Agent workflow, test cases, model behaviour and comparison results |
+## Build stages
 
-## How each stage will be recorded
+| Stage | Masterclass lesson | Focus | What I will verify |
+|---|---|---|---|
+| 00 | Lesson 0 | Ubuntu, Docker, Wazuh and n8n setup | Services start, local access works and containers can communicate |
+| 01 | Lesson 1 | Wazuh and n8n architecture with attack simulation | An isolated test produces telemetry that can be followed through Wazuh |
+| 02 | Lesson 2 | Auditd and Wazuh integration with Atomic Red Team | Audit events are collected and controlled test activity is visible |
+| 03 | Lesson 3 | Wazuh API exploration with Postman | Authentication works and selected API responses are understood |
+| 04 | Lesson 4 | AI cybersecurity agent with n8n and Wazuh | The workflow receives security data and produces a traceable result |
+| 05 | Lesson 5 | EDR alert triage agent | An alert is parsed, enriched and assessed with a recorded outcome |
+| 06 | Lesson 5.5 | Lab improvements for the threat hunter | The changes required for the next stage are implemented and checked |
+| 07 | Lesson 5.6 | Wazuh agents, Auditd and Sysmon telemetry | Endpoint sources send useful telemetry into the monitoring stack |
+| 08 | Lesson 6 | Attack chain simulation and investigation | Each controlled action has corresponding evidence and an investigation timeline |
+| 09 | Lesson 7 | AI threat hunter and model comparison | The agent is tested against defined cases and model results are compared fairly |
 
-Each lesson page will contain the parts that apply to that stage:
+## Evidence standard
 
-1. Objective
-2. Environment and prerequisites
-3. Architecture or data flow
-4. Commands and configuration used
-5. Verification and test results
-6. Screenshots and other evidence
-7. Problems and fixes
-8. Security notes
-9. What worked and what did not
-10. Next stage
+A stage should contain evidence that supports its claims.
 
-I will record actual commands and settings after running them. Anything that has not been tested will be labelled as planned or pending.
+1. Record the environment and versions used.
+2. Explain the relevant architecture and data flow.
+3. Include the commands and configuration that were actually used.
+4. Show how the result was tested.
+5. Include screenshots or output that support the result.
+6. Record failures, fixes and limitations.
+7. Explain security controls and any cost implications.
+
+A stage remains **Not started** until work begins. It becomes **In progress** during the build and **Complete** only after its verification checks pass. If something only partly works, document that instead of marking the whole stage complete.
 
 ## Cost and safety
 
-The first choice is local tooling and free options. Any step that could create cloud charges, require a paid API or start a subscription will be checked before it is used.
+Local and free options are the first choice. Check API pricing, usage limits and cloud billing before enabling any service that could incur charges.
 
-Attack simulation will remain inside the lab. No vulnerable service or test target will be exposed to the public internet.
+Keep attack simulation isolated. Do not expose vulnerable targets, management interfaces or lab credentials to the public internet. Use test accounts and sanitise evidence before committing it.
