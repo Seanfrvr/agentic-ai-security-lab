@@ -95,4 +95,4 @@ Pending. This stage is complete when the required services are running and their
 
 ## Next stage
 
-[01. Wazuh and n8n architecture](lesson-01-wazuh-n8n-architecture.md)
+[Stage 01: Wazuh and n8n architecture](lesson-01-wazuh-n8n-architecture.md)
