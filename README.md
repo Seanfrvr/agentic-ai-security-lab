@@ -12,7 +12,7 @@ Stage 00 is the environment setup. The nine stages that follow cover the masterc
 
 | Stage | Focus | Masterclass lesson | Status |
 |---|---|---|---|
-| 00 | Ubuntu, Docker, Wazuh and n8n setup | Lesson 0 | Not started |
+| 00 | Ubuntu, Docker, Wazuh and n8n setup | Lesson 0 | In progress |
 | 01 | Wazuh and n8n architecture with attack simulation | Lesson 1 | Not started |
 | 02 | Auditd and Wazuh with Atomic Red Team | Lesson 2 | Not started |
 | 03 | Wazuh API exploration with Postman | Lesson 3 | Not started |
