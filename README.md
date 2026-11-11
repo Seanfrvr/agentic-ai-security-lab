@@ -1,27 +1,27 @@
 # Agentic AI Security Lab
 
-A hands on security lab built around Wazuh, n8n and AI assisted security operations.
+My personal home lab for exploring and engineering security operations workflows with Wazuh, n8n and AI assisted analysis.
 
-I am following the [AtlantiumAI Agentic AI for Security Professionals masterclass](https://www.youtube.com/playlist?list=PLtyp1BBFawaz946JTxU1MOVZE13d37Yp7). This repository records my own build, configuration choices, tests, screenshots and troubleshooting.
+The lab is built and tested in my own local environment. I use it to investigate endpoint telemetry, detection and response, security automation, threat hunting and the safe use of AI agents in security workflows. This repository documents my architecture, implementation decisions, commands, tests, troubleshooting and verified results.
 
 A stage is only marked complete after I have built it and verified that it works.
 
 ## Lab progress
 
-Stage 00 is the environment setup. The nine stages that follow cover the masterclass build.
+Stage 00 covers the local home lab environment. The remaining stages expand its monitoring, detection and automation capabilities.
 
-| Stage | Focus | Masterclass lesson | Status |
+| Stage | Focus | Reference | Status |
 |---|---|---|---|
-| 00 | Ubuntu, Docker, Wazuh and n8n setup | Lesson 0 | In progress |
-| 01 | Wazuh and n8n architecture with attack simulation | Lesson 1 | Not started |
-| 02 | Auditd and Wazuh with Atomic Red Team | Lesson 2 | Not started |
-| 03 | Wazuh API exploration with Postman | Lesson 3 | Not started |
-| 04 | AI cybersecurity agent with n8n and Wazuh | Lesson 4 | Not started |
-| 05 | EDR alert triage agent | Lesson 5 | Not started |
-| 06 | Lab improvements for the threat hunter | Lesson 5.5 | Not started |
-| 07 | Wazuh agents, Auditd and Sysmon telemetry | Lesson 5.6 | Not started |
-| 08 | Attack chain simulation and investigation | Lesson 6 | Not started |
-| 09 | AI threat hunter and model comparison | Lesson 7 | Not started |
+| 00 | Ubuntu, Docker, Wazuh and n8n environment | Setup notes | In progress |
+| 01 | Wazuh and n8n architecture | Architecture review | Reviewed |
+| 02 | Auditd and Wazuh with Atomic Red Team | Build 02 | Not started |
+| 03 | Wazuh API exploration with Postman | Build 03 | Not started |
+| 04 | AI cybersecurity agent with n8n and Wazuh | Build 04 | Not started |
+| 05 | EDR alert triage agent | Build 05 | Not started |
+| 06 | Lab improvements for the threat hunter | Build 06 | Not started |
+| 07 | Wazuh agents, Auditd and Sysmon telemetry | Build 07 | Not started |
+| 08 | Attack chain simulation and investigation | Build 08 | Not started |
+| 09 | AI threat hunter and model comparison | Build 09 | Not started |
 
 ## Documentation
 
@@ -41,23 +41,20 @@ Stage 00 is the environment setup. The nine stages that follow cover the masterc
 
 | Path | Purpose |
 |---|---|
-| `docs/lessons/` | Build notes for each stage |
+| `docs/lessons/` | Build notes, implementation decisions and test results |
 | `docs/` | Roadmap and project documentation |
-| `screenshots/` | Visual evidence captured during testing |
+| `screenshots/` | Visual evidence captured during lab setup and testing |
 | `workflows/` | Sanitised n8n workflow exports |
 | `scripts/` | Scripts written for the lab |
 
-## How I work
+## Lab principles
 
-I build each stage, verify it, then document what actually happened. Planned work is labelled as planned. Untested commands are not presented as working instructions.
+- **Local first:** prioritise local and free tooling. Check any feature that could create a cloud charge or require a paid API before using it.
+- **Evidence based:** document what was actually configured and tested. Keep planned work, failed attempts and verified results clearly distinguished.
+- **Secure by design:** do not commit passwords, API keys, tokens, private keys, credentials or sensitive configuration. Review screenshots, logs and workflow exports before committing.
+- **Contained testing:** keep attack simulations and vulnerable targets inside the isolated lab. Do not expose them to the public internet.
+- **Reproducibility:** record relevant versions, configuration choices and commands so the environment and tests can be understood and repeated.
 
-Screenshots and configuration examples must not expose passwords, API keys, tokens, private addresses or other sensitive information.
+## Learning references
 
-Attack simulation stays inside an isolated lab. No vulnerable service or test target will be exposed to the public internet.
-
-I will prioritise local and free tooling. Any feature that could create a cloud charge or require a paid API will be checked before use.
-
-## References
-
-- [AtlantiumAI masterclass playlist](https://www.youtube.com/playlist?list=PLtyp1BBFawaz946JTxU1MOVZE13d37Yp7)
-- [AtlantiumAI Wazuh and n8n lab setup](https://github.com/Atlantium-AI/wazuh-n8n-lab-setup)
+The lab draws on vendor documentation, security research, practical exercises and selected community tutorials. The [AtlantiumAI Agentic AI for Security Professionals masterclass](https://www.youtube.com/playlist?list=PLtyp1BBFawaz946JTxU1MOVZE13d37Yp7) and its [Wazuh and n8n setup repository](https://github.com/Atlantium-AI/wazuh-n8n-lab-setup) are among the references used during the initial build. The implementation, validation, adaptations and findings documented here are from my own home lab.
