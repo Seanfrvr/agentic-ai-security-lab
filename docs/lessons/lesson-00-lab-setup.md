@@ -97,9 +97,7 @@ The following screenshots were captured locally. They have not yet been uploaded
 | `02-wazuh-agent-management.png` | Wazuh Agents Management and the Deploy new agent option |
 | `03-n8n-owner-setup.png` | Initial n8n owner account setup |
 
-Store them in `screenshots/00-lab-setup/` and add them to this page after reviewing and sanitising the images.
-
-Do not include passwords, API keys, access tokens, private keys or other secrets in screenshots, logs, workflow exports or configuration files. Review evidence before committing it.
+Store them in `screenshots/00-lab-setup/` and add them to this page with a short caption describing what each image demonstrates.
 
 ## Issues and fixes
 
