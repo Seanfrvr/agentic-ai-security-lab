@@ -30,8 +30,6 @@ The collection was configured to refresh the token periodically, approximately e
 
 Indexer requests use HTTP Basic Authentication. The credentials are supplied with the request rather than reusing the Manager API token.
 
-Credential values and tokens are excluded from this documentation. The published environment screenshot uses redacted values.
-
 ## Requests tested
 
 ### Agent information
@@ -62,7 +60,7 @@ These checks establish that Postman can communicate with both Wazuh APIs. The re
 
 ## Evidence
 
-The screenshots below show the Postman collection, request configuration and successful Manager API responses. Passwords and token values are redacted where applicable.
+The screenshots below show the Postman collection, request configuration and Manager API responses.
 
 ### Postman collection
 
@@ -78,9 +76,9 @@ Shows the authentication request setup. The successful HTTP 200 response is reco
 
 ### Postman environment
 
-![Redacted Postman environment configuration](../../screenshots/03-wazuh-api-postman/02-configuring%20API%20environment%20copy.png)
+![Postman environment configuration](../../screenshots/03-wazuh-api-postman/02-configuring%20API%20environment%20copy.png)
 
-Shows the Manager and Indexer environment variables with password values hidden.
+Shows the Manager and Indexer environment variables used by the collection.
 
 ### Agent listing
 
@@ -101,12 +99,6 @@ The Indexer alert search was also tested, although a response screenshot is not 
 Stage 02 focused on generating and collecting endpoint telemetry. This stage establishes how another application can retrieve Wazuh agent information, software inventory and alert records through APIs.
 
 That is the bridge to Stage 04: connecting n8n and an AI agent to Wazuh so the workflow can retrieve and analyse security data.
-
-## Security notes
-
-1. Do not publish usernames and passwords, bearer tokens, API keys or Postman environment exports containing secrets.
-2. Redact authentication headers and token values in screenshots.
-3. Keep example requests reproducible without exposing lab credentials.
 
 ## Next stage
 
