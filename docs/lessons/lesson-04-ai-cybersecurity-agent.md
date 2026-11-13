@@ -19,7 +19,6 @@ Document the trigger, input data, Wazuh interaction, processing nodes, model con
 ## Test plan
 
 - Import or build the workflow.
-- Configure credentials without placing secrets in the workflow export.
 - Send a known test input through the workflow.
 - Inspect each important node and its output.
 - Check how the workflow handles missing or malformed data.
