@@ -59,6 +59,6 @@ The project follows the flow from endpoint telemetry to AI assisted security ope
 - **Contained testing:** keep attack simulations and vulnerable targets inside the isolated lab. Do not expose them to the public internet.
 - **Reproducibility:** record relevant versions, configuration choices and commands so the environment and tests can be understood and repeated.
 
-## Learning references
+## Project approach
 
-The lab draws on vendor documentation, security research, practical exercises and selected community tutorials. The [AtlantiumAI Agentic AI for Security Professionals masterclass](https://www.youtube.com/playlist?list=PLtyp1BBFawaz946JTxU1MOVZE13d37Yp7) and its [Wazuh and n8n setup repository](https://github.com/Atlantium-AI/wazuh-n8n-lab-setup) are among the references used during the initial build. The implementation, validation, adaptations and findings documented here are from my own home lab.
+This is an independently built security operations home lab. The repository documents the architecture, configurations, integrations, simulations, troubleshooting and validation carried out in the environment. Each result is based on hands-on testing, with relevant technical details and evidence recorded as the lab develops.
