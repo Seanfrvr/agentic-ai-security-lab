@@ -21,11 +21,17 @@ The workflow connects the chat trigger to the AI Agent. The model, memory and to
 
 ## Wazuh alert retrieval
 
-The HTTP Request tool targets the Wazuh alerts index. The captured configuration shows the Indexer service address and the `wazuh-alerts` endpoint.
+The HTTP Request tool queries the Wazuh Indexer search API using the endpoint configured in the lab:
+
+```text
+https://172.19.0.4:9200/wazuh-alerts-4.x-*/_search
+```
+
+The address uses the Indexer container's IP on port `9200`, targets the `wazuh-alerts-4.x-*` index pattern and calls the `_search` endpoint. The IP is specific to the current Docker environment and may change if the container is recreated.
 
 The request body uses an AI-defined `NumAlerts` parameter through n8n's `$fromAI()` expression. The captured expression supplies a default of 10 when the agent does not provide a value. The query sorts results by `@timestamp` in descending order and selects source fields for the response.
 
-The configuration screenshot shows the request method as `GET`. The successful execution screenshot confirms that the request tool ran and returned data. Authentication and TLS settings must be recorded against the final local configuration rather than inferred from the screenshots.
+The configuration screenshot shows the request method as `GET`. The successful execution screenshot confirms that the request tool ran and returned data.
 
 ## Verification
 
@@ -57,11 +63,11 @@ The execution view shows the chat trigger, AI Agent, Gemini model, memory and HT
 
 The initial end-to-end workflow is operational. The captured result demonstrates alert retrieval and AI-assisted summarisation, not autonomous remediation. Recommendations produced by the agent still require analyst review.
 
-Before treating this stage as complete, record and verify the final local HTTP authentication and TLS configuration, inspect the full Indexer query and selected fields, and test different alert counts and chat requests. Confirm the system prompt and the behaviour when the Indexer returns no results or an error.
+The exact local authentication and TLS configuration, full query details and error handling can be examined in a later build or validation pass. The current evidence is sufficient to record the successful initial integration.
 
 ## Outcome
 
-Initial workflow built and successfully executed. Further configuration review and validation remain.
+Initial workflow built and successfully executed. Further validation can be carried into the next phase.
 
 ## Next stage
 
