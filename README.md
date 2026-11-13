@@ -23,6 +23,10 @@ Stage 00 covers the local home lab environment. The remaining stages expand its 
 | 08 | Attack chain simulation and investigation | Build 08 | Not started |
 | 09 | AI threat hunter and model comparison | Build 09 | Not started |
 
+## Build sequence
+
+The project follows the flow from endpoint telemetry to AI assisted security operations: collect activity with Auditd and Wazuh, expose Wazuh data through its APIs, analyse it with n8n and an AI model, then build toward alert triage and threat hunting. Each stage records the implementation and evidence from the local lab.
+
 ## Documentation
 
 - [Lab roadmap](docs/roadmap.md)
