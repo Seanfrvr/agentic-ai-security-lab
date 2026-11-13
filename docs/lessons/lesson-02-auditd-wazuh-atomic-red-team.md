@@ -6,31 +6,37 @@
 
 ## Objective
 
-Add Linux audit telemetry to the Ubuntu endpoint, collect it through Wazuh and generate controlled endpoint activity with Atomic Red Team. This establishes a richer source of endpoint events for the AI-assisted investigation workflows built in later stages.
+Extend endpoint visibility on Ubuntu with Auditd, collect its audit log through Wazuh and generate controlled activity with Atomic Red Team. This provides endpoint telemetry for the AI-assisted investigation workflows developed in later stages.
 
-## Lab implementation
+## Implementation
 
 ### Auditd and Wazuh
 
-Auditd was installed and enabled on the Ubuntu endpoint. The Wazuh agent was configured to collect the Auditd log at:
+Auditd was installed and enabled on the Ubuntu endpoint. The Wazuh agent configuration was updated to collect:
 
 ```text
 /var/log/audit/audit.log
 ```
 
-The collection path connects Linux audit records with the existing Wazuh monitoring stack. The Ubuntu endpoint appeared in Wazuh as agent `007` (`ubuntu-local`) and was active during the lab checks.
+The agent was restarted and its service status checked. The screenshot below records the Wazuh agent running successfully after the configuration change.
+
+![Wazuh agent restarted and confirmed active](../../screenshots/02-auditd-atomic-red-team/01-configuring%20wazuh%20agent%20p2.png)
 
 ### Atomic Red Team
 
-Atomic Red Team was installed under:
+Atomic Red Team was installed under `/opt/atomic-red-team`. A Git clone attempt failed during transfer, so the installation was completed using an archive instead. The collection contained 354 Atomic tests.
+
+The first test invocation exposed an incorrect or unavailable atomics path. The command was corrected to use:
 
 ```text
-/opt/atomic-red-team
+/opt/atomic-red-team/atomics
 ```
 
-The repository was obtained using a release archive after the normal Git clone attempt failed. The installed collection contained 354 Atomic tests.
+The corrected invocation reached the confirmation prompt for the test run.
 
-Tests were run against the isolated Ubuntu lab to generate endpoint activity for Wazuh to collect. The tests provide controlled examples of ATT&CK-related behaviour; the presence of an alert alone does not establish that every simulated technique was detected or that a real compromise occurred.
+![Atomic Red Team installation attempt and initial path issue](../../screenshots/02-auditd-atomic-red-team/02-atomic%20red%20team%20deployment%20p2.png)
+
+![Atomic Red Team invocation using the corrected atomics path](../../screenshots/02-auditd-atomic-red-team/03-atomic%20red%20team%20execute%20p2.png)
 
 ## Telemetry flow
 
@@ -45,20 +51,20 @@ Auditd log
 /var/log/audit/audit.log
         |
         v
-Wazuh Agent (ubuntu-local, agent 007)
+Wazuh Agent
         |
         v
 Wazuh Manager
         |
         v
-Wazuh alerts for analyst review
+Wazuh alerts for review
 ```
 
 ## Observed results
 
-Following the Atomic Red Team testing, the Wazuh alert view showed this severity distribution:
+The Wazuh Overview dashboard showed the following alert distribution for its last-24-hours view:
 
-| Severity | Alerts observed |
+| Severity | Alerts |
 |---|---:|
 | Medium | 184 |
 | Low | 213 |
@@ -66,30 +72,21 @@ Following the Atomic Red Team testing, the Wazuh alert view showed this severity
 | Critical | 0 |
 | **Total** | **397** |
 
-This is the observed alert snapshot from the user's lab, not the instructor's demonstration counts. No high or critical alerts appeared in this snapshot. The result provides a baseline for later work on rule coverage and alert quality; it does not by itself mean the simulated activity was harmless or that all relevant behaviour was detected.
+![Wazuh Overview showing alert severity counts](../../screenshots/02-auditd-atomic-red-team/04-wazuh%20alerts%20dashboard%20p2.png)
+
+This is the observed dashboard snapshot from this lab, not the instructor's demonstration counts. The dashboard also showed one active and one disconnected agent in its agent summary. These figures are a point-in-time view and should not be interpreted as proof that every Atomic test generated a corresponding alert.
 
 ## Why this stage matters
 
-The lab now has an additional endpoint telemetry source beyond the default event collection. Atomic Red Team provides repeatable activity that can be used to examine what Wazuh records and how its rules classify that activity.
+Auditd adds Linux audit records to the endpoint telemetry available to Wazuh. Atomic Red Team provides controlled activity that can be used to examine the events collected and how Wazuh classifies them.
 
-This gives the later n8n and AI agent stages security events to retrieve, summarise and investigate rather than relying on synthetic example alerts.
-
-## Evidence
-
-Screenshots for this stage will be added under [`screenshots/02-auditd-atomic-red-team/`](../../screenshots/02-auditd-atomic-red-team/) after review and sanitisation.
-
-Planned evidence includes:
-
-- Auditd service and log activity on Ubuntu.
-- Wazuh agent status for the Ubuntu endpoint.
-- Atomic Red Team installation or test execution.
-- Wazuh alert results after the test activity.
+This creates a practical source of endpoint security data for the API integration and AI agent stages that follow.
 
 ## Security notes
 
-- Atomic tests were run in the isolated lab environment.
-- Review screenshots and terminal output before committing them. Remove credentials, tokens, private configuration and unrelated sensitive host details.
-- Keep the exact test identifiers and any custom Auditd or Wazuh rules alongside the evidence when they are captured, so the activity can be reproduced accurately.
+- Atomic Red Team testing was performed in the isolated lab.
+- Screenshots were reviewed before publication. Continue to check future terminal output, workflow exports and screenshots for credentials, tokens and sensitive configuration.
+- Record specific Atomic test identifiers and any custom Auditd or Wazuh rules when adding deeper test evidence.
 
 ## Next stage
 
