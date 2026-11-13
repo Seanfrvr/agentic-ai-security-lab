@@ -20,7 +20,7 @@ Explain how the components connect and where the data moves.
 
 ## Implementation
 
-Record the commands, configuration and workflow changes made during the build. Keep secrets out of the repository.
+Record the commands, configuration and workflow changes made during the build.
 
 ## Verification
 
@@ -33,10 +33,6 @@ Add screenshots with a short explanation of what each one proves.
 ## Issues and fixes
 
 Record errors, troubleshooting steps and confirmed fixes.
-
-## Security notes
-
-Record exposure risks, permissions, credentials handling and isolation.
 
 ## Outcome
 
