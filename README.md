@@ -55,7 +55,6 @@ The project follows the flow from endpoint telemetry to AI assisted security ope
 
 - **Local first:** prioritise local and free tooling. Check any feature that could create a cloud charge or require a paid API before using it.
 - **Evidence based:** document what was actually configured and tested. Keep planned work, failed attempts and verified results clearly distinguished.
-- **Secure by design:** do not commit passwords, API keys, tokens, private keys, credentials or sensitive configuration. Review screenshots, logs and workflow exports before committing.
 - **Contained testing:** keep attack simulations and vulnerable targets inside the isolated lab. Do not expose them to the public internet.
 - **Reproducibility:** record relevant versions, configuration choices and commands so the environment and tests can be understood and repeated.
 
