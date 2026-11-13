@@ -15,6 +15,4 @@ Store screenshots here in folders named for the stage.
 
 Use descriptive filenames that explain what the image proves. Add a short caption in the relevant lesson page.
 
-Before committing an image, check that it does not reveal passwords, API keys, tokens, private addresses, personal data or unrelated desktop content. Crop the image where needed.
-
 Only include evidence from tests that were actually performed.
