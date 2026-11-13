@@ -33,8 +33,8 @@ A stage should contain evidence that supports its claims.
 
 A stage remains **Not started** until work begins. It becomes **In progress** during the build and **Complete** only after its verification checks pass. If something only partly works, document that instead of marking the whole stage complete.
 
-## Cost and safety
+## Cost and isolation
 
 Local and free options are the first choice. Check API pricing, usage limits and cloud billing before enabling any service that could incur charges.
 
-Keep attack simulation isolated. Do not expose vulnerable targets, management interfaces or lab credentials to the public internet. Use test accounts and sanitise evidence before committing it.
+Keep attack simulations and vulnerable targets inside the isolated lab environment.
