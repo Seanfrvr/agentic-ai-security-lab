@@ -82,11 +82,9 @@ Auditd adds Linux audit records to the endpoint telemetry available to Wazuh. At
 
 This creates a practical source of endpoint security data for the API integration and AI agent stages that follow.
 
-## Security notes
+## Test context
 
-- Atomic Red Team testing was performed in the isolated lab.
-- Screenshots were reviewed before publication. Continue to check future terminal output, workflow exports and screenshots for credentials, tokens and sensitive configuration.
-- Record specific Atomic test identifiers and any custom Auditd or Wazuh rules when adding deeper test evidence.
+Atomic Red Team testing was performed in the isolated lab. Record specific Atomic test identifiers and any custom Auditd or Wazuh rules when adding deeper test evidence.
 
 ## Next stage
 
