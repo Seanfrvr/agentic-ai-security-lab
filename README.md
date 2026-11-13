@@ -15,7 +15,7 @@ Stage 00 covers the local home lab environment. The remaining stages expand its 
 | 00 | Ubuntu, Docker, Wazuh and n8n environment | Setup notes | In progress |
 | 01 | Wazuh and n8n architecture | Architecture review | Reviewed |
 | 02 | Auditd and Wazuh with Atomic Red Team | Build 02 | In progress |
-| 03 | Wazuh API exploration with Postman | Build 03 | Not started |
+| 03 | Wazuh API exploration with Postman | Build 03 | In progress |
 | 04 | AI cybersecurity agent with n8n and Wazuh | Build 04 | Not started |
 | 05 | EDR alert triage agent | Build 05 | Not started |
 | 06 | Lab improvements for the threat hunter | Build 06 | Not started |
