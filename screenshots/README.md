@@ -2,8 +2,6 @@
 
 Store screenshots here in folders named for the stage.
 
-Suggested folders:
-
 - `00-lab-setup/`
 - `01-wazuh-n8n-architecture/`
 - `02-auditd-atomic-red-team/`
