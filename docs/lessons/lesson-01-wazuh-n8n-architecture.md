@@ -53,7 +53,6 @@ Container startup and shared network attachment do not, by themselves, prove tha
 The following work remains for the later build stages:
 
 - Verify the Wazuh Manager API is reachable from n8n.
-- Configure authentication without exposing credentials in workflow exports or screenshots.
 - Retrieve a controlled example of Wazuh data through an n8n HTTP Request node.
 - Configure endpoint telemetry with Auditd.
 - Run an authorised, isolated Atomic Red Team test and trace the resulting event through Wazuh.
