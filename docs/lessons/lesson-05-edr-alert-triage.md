@@ -1,6 +1,6 @@
 # Stage 05: EDR alert triage
 
-<sup>Status: In progress</sup>
+<sup>Status: Complete</sup>
 
 ## Objective
 
@@ -108,7 +108,7 @@ The [Stage 05 screenshot evidence](../../screenshots/05-edr-alert-triage/README.
 
 ## Outcome
 
-The initial aggregation based EDR triage workflow has been built and successfully tested. Further refinement of aggregation output and explicit triage thresholds remains in progress.
+The initial aggregation based EDR triage workflow is complete and successfully tested. Further refinement of aggregation output and explicit triage thresholds can be considered as future improvements.
 
 ## Next stage
 
