@@ -74,15 +74,17 @@ The Wazuh Agents Management page currently lists an older Windows 11 agent named
 
 ## Evidence
 
-The following screenshots were captured locally and are ready to be added to the repository.
+**Docker environment**
 
-| Filename | What it demonstrates |
-|---|---|
-| `01-docker-four-containers.png` | Four running containers: Wazuh Manager, Indexer, Dashboard and n8n |
-| `02-wazuh-agent-management.png` | Wazuh Agents Management and the Deploy new agent option |
-| `03-n8n-owner-setup.png` | Initial n8n owner account setup |
+![Four running containers](../../screenshots/00-lab-setup/01-docker-four-containers.png)
 
-Once uploaded to `screenshots/00-lab-setup/`, embed each image here so it appears directly in the page.
+**Wazuh agent management**
+
+![Wazuh Agents Management](../../screenshots/00-lab-setup/02-wazuh-agent-management.png)
+
+**n8n owner setup**
+
+![n8n initial owner setup](../../screenshots/00-lab-setup/03-n8n-owner-setup.png)
 
 ## Issues and fixes
 
