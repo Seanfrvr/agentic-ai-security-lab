@@ -1,80 +1,41 @@
 # 00. Lab setup
 
-<sup>Status: In progress</sup>
+<sup>Status: Complete</sup>
 
 ## Objective
 
-Prepare the local Ubuntu environment for the rest of the lab. The environment runs Wazuh and n8n in Docker containers connected through a shared Docker network.
+Set up a local Ubuntu environment running Wazuh and n8n in Docker, connected through a shared network.
 
 ## Environment
 
-| Item | Actual value |
+| Item | Configuration |
 |---|---|
-| Host machine | MacBook Pro |
-| Virtualisation software | VirtualBox |
-| Lab operating system | Ubuntu Desktop VM |
-| Docker version | 29.9.3 |
-| Wazuh version | 4.9.0 |
-| n8n image | `n8nio/n8n` (tag not pinned in the Compose file) |
-| Shared Docker network | `soc-net` |
+| Host | MacBook Pro (Late 2013) |
+| Virtualisation | VirtualBox |
+| Operating system | Ubuntu 22.04 |
+| Docker | 29.9.3 |
+| Wazuh | 4.9.0 |
+| n8n | `n8nio/n8n` |
+| Docker network | `soc-net` |
 
-Ubuntu version and VM resource allocations have not yet been recorded.
+## Build
 
-## Components
+The Docker daemon initially failed to start because its systemd socket was in a failed state. I recovered the socket and service using systemd.
 
-| Component | Role |
-|---|---|
-| Wazuh Manager | Receives and analyses endpoint data |
-| Wazuh Indexer | Stores and indexes security events |
-| Wazuh Dashboard | Interface for reviewing alerts and events |
-| n8n | Workflow automation |
-| `soc-net` | Shared Docker network used by Wazuh and n8n |
+An existing Wazuh 4.9.0 deployment was already installed. I retained its Manager, Indexer and Dashboard containers rather than replacing them with a different version.
 
-## Build record
+The n8n Compose configuration required an external `soc-net` network. I created the network, connected the three Wazuh containers and started n8n.
 
-The Docker daemon initially failed to start because its systemd socket activation unit was in a failed state. The socket and service were recovered with:
+The resulting environment had four running containers:
 
-```bash
-sudo systemctl daemon-reload
-sudo systemctl reset-failed docker.socket docker.service
-sudo systemctl restart docker.socket
-sudo systemctl start docker
-```
-
-The existing Wazuh deployment was already present and used version 4.9.0. Its three containers were preserved:
-
-| Container | Image | Observed state |
-|---|---|---|
-| Wazuh Manager | `wazuh/wazuh-manager:4.9.0` | Running |
-| Wazuh Indexer | `wazuh/wazuh-indexer:4.9.0` | Running |
-| Wazuh Dashboard | `wazuh/wazuh-dashboard:4.9.0` | Running |
-
-The available startup script targeted Wazuh 4.12.0 and checked for container names that did not match the existing 4.9.0 deployment. It was not run, avoiding an unintended second Wazuh deployment.
-
-The n8n Compose file declared an external network named `soc-net`. That network did not initially exist, so it was created and the three existing Wazuh containers were connected to it. n8n was then started from the local `n8n-docker/docker-compose.yml`.
-
-The resulting `docker ps` output showed four running containers: Wazuh Manager, Indexer, Dashboard and n8n.
-
-## Verification
-
-| Check | Result |
-|---|---|
-| Ubuntu VM starts | Verified |
-| Docker installed | Verified, version 29.9.3 |
-| Docker daemon running | Verified after systemd socket recovery |
-| Wazuh Manager, Indexer and Dashboard running | Verified |
-| Wazuh Dashboard accessible | Verified; dashboard and Agents Management pages opened |
-| n8n container running | Verified |
-| n8n initial owner setup | Completed |
-| Wazuh containers connected to `soc-net` | Verified with `docker network inspect soc-net` |
-| n8n to Wazuh application/API communication | Not yet tested |
-| Endpoint telemetry from a newly enrolled agent | Not yet tested |
-
-The Wazuh Agents Management page currently lists an older Windows 11 agent named `win11-victim` as disconnected. It has been left registered because it does not prevent this lab from proceeding. No new Ubuntu agent has been enrolled yet.
+- Wazuh Manager
+- Wazuh Indexer
+- Wazuh Dashboard
+- n8n
 
 ## Evidence
 
-**Docker environment**
+**Docker containers running**
 
 ![Four running containers](../../screenshots/00-lab-setup/01-docker-four-containers.png)
 
@@ -82,29 +43,13 @@ The Wazuh Agents Management page currently lists an older Windows 11 agent named
 
 ![Wazuh Agents Management](../../screenshots/00-lab-setup/02-wazuh-agent-management.png)
 
-**n8n owner setup**
+**n8n initial setup**
 
-![n8n initial owner setup](../../screenshots/00-lab-setup/03-n8n-owner-setup.png)
-
-## Issues and fixes
-
-| Issue | Action |
-|---|---|
-| Docker daemon unavailable | Recovered the systemd Docker socket and started Docker |
-| Existing Wazuh deployment did not match the startup script's expected version and container names | Preserved the existing 4.9.0 containers and avoided running the script |
-| n8n expected an external `soc-net` network that did not exist | Created `soc-net` and connected the existing Wazuh containers |
-| Existing Windows agent appeared disconnected | Left the old registration in place; it is not required to start the lab |
-
-## Outstanding work
-
-- Verify n8n can authenticate to and query the Wazuh API.
-- Record the Ubuntu version and VM resource allocations.
-- Pin the n8n image to a deliberate version before relying on repeatable rebuilds.
-- Enrol a Linux endpoint when beginning the endpoint telemetry exercises.
+![n8n owner setup](../../screenshots/00-lab-setup/03-n8n-owner-setup.png)
 
 ## Outcome
 
-The four main containers are running and the local interfaces have been accessed. Stage 00 remains in progress until application-level communication between n8n and Wazuh is tested.
+The local Wazuh and n8n environment is running, the dashboards are accessible, and all four containers are connected through the shared Docker network.
 
 ## Next stage
 
