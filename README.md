@@ -69,7 +69,7 @@ agentic-ai-security-lab/
 
 Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked from the relevant lesson.
 
-The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 05. Stage 06 evidence notes are in place, with screenshots pending transfer and review. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
+The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 05. Stage 06 screenshots are pending transfer and review. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
 
 See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification goals.
 
