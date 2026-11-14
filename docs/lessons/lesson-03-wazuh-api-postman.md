@@ -2,8 +2,6 @@
 
 <sup>Status: In progress</sup>
 
-**Masterclass reference:** Lesson 3, *Exploring the Wazuh API with Postman*
-
 ## Objective
 
 Test how Wazuh data can be accessed programmatically. Postman was used to authenticate with the Wazuh Manager API, inspect endpoint information and query alert data through the Wazuh Indexer API. These are the interfaces the n8n workflows will use in the next stages.
