@@ -2,14 +2,6 @@
 
 <sup>Status: In progress</sup>
 
-## Reference
-
-[Lesson 0: Lab Setup for Agentic AI Security Automation](https://www.youtube.com/watch?v=fgxwkfjNOA8)
-
-[Masterclass playlist](https://www.youtube.com/playlist?list=PLtyp1BBFawaz946JTxU1MOVZE13d37Yp7)
-
-[Instructor's lab setup repository](https://github.com/Atlantium-AI/wazuh-n8n-lab-setup)
-
 ## Objective
 
 Prepare the local Ubuntu environment for the rest of the lab. The environment runs Wazuh and n8n in Docker containers connected through a shared Docker network.
@@ -23,7 +15,7 @@ Prepare the local Ubuntu environment for the rest of the lab. The environment ru
 | Lab operating system | Ubuntu Desktop VM |
 | Docker version | 29.9.3 |
 | Wazuh version | 4.9.0 |
-| n8n image | `n8nio/n8n` (tag not pinned in the supplied Compose file) |
+| n8n image | `n8nio/n8n` (tag not pinned in the Compose file) |
 | Shared Docker network | `soc-net` |
 
 Ubuntu version and VM resource allocations have not yet been recorded.
@@ -39,13 +31,6 @@ Ubuntu version and VM resource allocations have not yet been recorded.
 | `soc-net` | Shared Docker network used by Wazuh and n8n |
 
 ## Build record
-
-The instructor's repository was cloned locally:
-
-```bash
-git clone https://github.com/Atlantium-AI/wazuh-n8n-lab-setup
-cd wazuh-n8n-lab-setup
-```
 
 The Docker daemon initially failed to start because its systemd socket activation unit was in a failed state. The socket and service were recovered with:
 
@@ -64,9 +49,9 @@ The existing Wazuh deployment was already present and used version 4.9.0. Its th
 | Wazuh Indexer | `wazuh/wazuh-indexer:4.9.0` | Running |
 | Wazuh Dashboard | `wazuh/wazuh-dashboard:4.9.0` | Running |
 
-The instructor's startup script targets Wazuh 4.12.0 and checks for container names that do not match the existing 4.9.0 deployment. The full script was therefore not rerun, avoiding an unintended second Wazuh deployment.
+The available startup script targeted Wazuh 4.12.0 and checked for container names that did not match the existing 4.9.0 deployment. It was not run, avoiding an unintended second Wazuh deployment.
 
-The n8n Compose file declares an external network named `soc-net`. That network did not initially exist, so it was created and the three existing Wazuh containers were connected to it. n8n was then started from the supplied `n8n-docker/docker-compose.yml`.
+The n8n Compose file declared an external network named `soc-net`. That network did not initially exist, so it was created and the three existing Wazuh containers were connected to it. n8n was then started from the local `n8n-docker/docker-compose.yml`.
 
 The resulting `docker ps` output showed four running containers: Wazuh Manager, Indexer, Dashboard and n8n.
 
@@ -89,22 +74,22 @@ The Wazuh Agents Management page currently lists an older Windows 11 agent named
 
 ## Evidence
 
-The following screenshots were captured locally. They have not yet been uploaded to this repository.
+The following screenshots were captured locally and are ready to be added to the repository.
 
-| Suggested filename | What it demonstrates |
+| Filename | What it demonstrates |
 |---|---|
 | `01-docker-four-containers.png` | Four running containers: Wazuh Manager, Indexer, Dashboard and n8n |
 | `02-wazuh-agent-management.png` | Wazuh Agents Management and the Deploy new agent option |
 | `03-n8n-owner-setup.png` | Initial n8n owner account setup |
 
-Store them in `screenshots/00-lab-setup/` and add them to this page with a short caption describing what each image demonstrates.
+Once uploaded to `screenshots/00-lab-setup/`, embed each image here so it appears directly in the page.
 
 ## Issues and fixes
 
 | Issue | Action |
 |---|---|
 | Docker daemon unavailable | Recovered the systemd Docker socket and started Docker |
-| Existing Wazuh deployment did not match the instructor script's expected version and container names | Preserved the existing 4.9.0 containers and avoided rerunning the full script |
+| Existing Wazuh deployment did not match the startup script's expected version and container names | Preserved the existing 4.9.0 containers and avoided running the script |
 | n8n expected an external `soc-net` network that did not exist | Created `soc-net` and connected the existing Wazuh containers |
 | Existing Windows agent appeared disconnected | Left the old registration in place; it is not required to start the lab |
 
