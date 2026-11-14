@@ -61,10 +61,6 @@ agentic-ai-security-lab/
 │   ├── 04-ai-cybersecurity-agent/
 │   ├── 05-edr-alert-triage/
 │   └── README.md
-├── scripts/
-│   └── README.md
-├── workflows/
-│   └── README.md
 ├── .gitignore
 └── README.md
 ```
@@ -74,8 +70,6 @@ agentic-ai-security-lab/
 Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked from the relevant lesson.
 
 The [screenshots directory](screenshots/) currently contains evidence for lab setup and Stages 02 through 05. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
-
-The [workflows directory](workflows/) is reserved for sanitised n8n exports. The [scripts directory](scripts/) is reserved for lab scripts. At present, these directories contain guidance files rather than published workflow exports or scripts.
 
 See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification goals.
 
