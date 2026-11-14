@@ -1,4 +1,4 @@
-# Agentic AI Security Lab
+# Agentic AI Security Operations Lab
 
 A local security operations lab built around Wazuh, n8n, OpenSearch and AI assisted analysis.
 
