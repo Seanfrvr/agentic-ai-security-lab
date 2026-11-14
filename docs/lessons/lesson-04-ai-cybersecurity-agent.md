@@ -1,6 +1,6 @@
 # Stage 04: AI cybersecurity agent
 
-<sup>Status: In progress</sup>
+<sup>Status: Complete</sup>
 
 ## Objective
 
@@ -31,13 +31,11 @@ The address uses the Indexer container's IP on port `9200`, targets the `wazuh-a
 
 The request body uses an AI-defined `NumAlerts` parameter through n8n's `$fromAI()` expression. The captured expression supplies a default of 10 when the agent does not provide a value. The query sorts results by `@timestamp` in descending order and selects source fields for the response.
 
-The configuration screenshot shows the request method as `GET`. The successful execution screenshot confirms that the request tool ran and returned data.
+The request uses the `GET` method. The successful execution confirms that the tool ran and returned alert data.
 
 ## Verification
 
 The workflow was tested through the n8n chat interface with a request to retrieve and summarise the latest 20 alerts.
-
-The captured execution shows:
 
 | Result | Observed value |
 |---|---:|
@@ -54,20 +52,25 @@ The execution view shows the chat trigger, AI Agent, Gemini model, memory and HT
 
 ## Evidence
 
-- [HTTP Request configuration](../../screenshots/04-ai-cybersecurity-agent/01-configuring%20api%20requests.png)
-- [Dynamic alert count and query body](../../screenshots/04-ai-cybersecurity-agent/02-advanced%20agent%20parameters.png)
-- [Workflow architecture](../../screenshots/04-ai-cybersecurity-agent/03-workflow%20setup.png)
-- [Successful alert summary and execution](../../screenshots/04-ai-cybersecurity-agent/04-alert%20summary%20analysis.png)
+**HTTP Request configuration**
 
-## Findings and next checks
+![Wazuh Indexer HTTP Request configuration](../../screenshots/04-ai-cybersecurity-agent/01-configuring%20api%20requests.png)
 
-The initial end-to-end workflow is operational. The captured result demonstrates alert retrieval and AI-assisted summarisation, not autonomous remediation. Recommendations produced by the agent still require analyst review.
+**Dynamic alert count and query body**
 
-The exact local authentication and TLS configuration, full query details and error handling can be examined in a later build or validation pass. The current evidence is sufficient to record the successful initial integration.
+![Dynamic alert count and query configuration](../../screenshots/04-ai-cybersecurity-agent/02-advanced%20agent%20parameters.png)
+
+**Workflow architecture**
+
+![First Wazuh Agent workflow architecture](../../screenshots/04-ai-cybersecurity-agent/03-workflow%20setup.png)
+
+**Successful alert summary and execution**
+
+![AI agent alert summary and successful execution](../../screenshots/04-ai-cybersecurity-agent/04-alert%20summary%20analysis.png)
 
 ## Outcome
 
-Initial workflow built and successfully executed. Further validation can be carried into the next phase.
+The conversational agent successfully retrieved 20 Wazuh alerts and produced an AI-assisted summary with investigation guidance. The workflow demonstrates alert retrieval and analysis, not autonomous remediation. Recommendations still require analyst review.
 
 ## Next stage
 
