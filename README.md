@@ -10,12 +10,12 @@ A stage is only marked complete after it has been built and verified.
 
 | Stage | Focus | Documentation | Status |
 |---|---|---|---|
-| 00 | Ubuntu, Docker, Wazuh and n8n environment | [Lab setup](docs/lessons/lesson-00-lab-setup.md) | In progress |
-| 01 | Wazuh and n8n architecture | [Architecture](docs/lessons/lesson-01-wazuh-n8n-architecture.md) | Reviewed |
-| 02 | Auditd, Wazuh and Atomic Red Team | [Endpoint testing](docs/lessons/lesson-02-auditd-wazuh-atomic-red-team.md) | In progress |
-| 03 | Wazuh API exploration with Postman | [API integration](docs/lessons/lesson-03-wazuh-api-postman.md) | In progress |
-| 04 | AI cybersecurity agent with n8n and Wazuh | [Alert summarisation](docs/lessons/lesson-04-ai-cybersecurity-agent.md) | In progress |
-| 05 | EDR alert triage agent | [Alert triage](docs/lessons/lesson-05-edr-alert-triage.md) | In progress |
+| 00 | Ubuntu, Docker, Wazuh and n8n environment | [Lab setup](docs/lessons/lesson-00-lab-setup.md) | Complete |
+| 01 | Wazuh and n8n architecture | [Architecture](docs/lessons/lesson-01-wazuh-n8n-architecture.md) | Complete |
+| 02 | Auditd, Wazuh and Atomic Red Team | [Endpoint testing](docs/lessons/lesson-02-auditd-wazuh-atomic-red-team.md) | Complete |
+| 03 | Wazuh API exploration with Postman | [API integration](docs/lessons/lesson-03-wazuh-api-postman.md) | Complete |
+| 04 | AI cybersecurity agent with n8n and Wazuh | [Alert summarisation](docs/lessons/lesson-04-ai-cybersecurity-agent.md) | Complete |
+| 05 | EDR alert triage agent | [Alert triage](docs/lessons/lesson-05-edr-alert-triage.md) | Complete |
 | 06 | Lab improvements for the threat hunter | [Threat hunter improvements](docs/lessons/lesson-06-threat-hunter-lab-improvements.md) | Not started |
 | 07 | Wazuh agents, Auditd and Sysmon telemetry | [Endpoint telemetry](docs/lessons/lesson-07-endpoint-telemetry.md) | Not started |
 | 08 | Attack chain simulation and investigation | [Attack chain investigation](docs/lessons/lesson-08-attack-chain-investigation.md) | Not started |
