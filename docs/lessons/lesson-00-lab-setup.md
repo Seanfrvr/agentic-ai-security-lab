@@ -10,7 +10,7 @@ Prepare the local Ubuntu environment for the rest of the lab. The environment ru
 
 | Item | Actual value |
 |---|---|
-| Host machine | MacBook Pro (Late 2013) |
+| Host machine | MacBook Pro |
 | Virtualisation software | VirtualBox |
 | Lab operating system | Ubuntu Desktop VM |
 | Docker version | 29.9.3 |
