@@ -82,6 +82,26 @@ The agent did not execute remediation or independently verify authorisation. Its
 - The final assessment correctly treated the activity as suspicious in isolation while acknowledging the Atomic Red Team test context. This is an important distinction between suspicious telemetry and confirmed malicious activity.
 - A successful agent response does not by itself establish that every alert was retrieved or that the triage conclusions are complete.
 
+## Selected screenshots
+
+A few key views are included here so the implementation and results are visible while reading the lesson.
+
+### OpenSearch aggregation configuration
+
+![OpenSearch aggregation query configuration](../../screenshots/05-edr-alert-triage/03-configuring%20search%20parameters.png)
+
+### n8n alert triage workflow
+
+![Alert Triage agent workflow in n8n](../../screenshots/05-edr-alert-triage/06-alert%20triage%20agent.png)
+
+### Triage summary
+
+![AI triage summary separating high, medium and informational findings](../../screenshots/05-edr-alert-triage/11-triage%20testing%20finale%202.png)
+
+### Final assessment and analyst follow up
+
+![Final triage assessment and recommended analyst follow up](../../screenshots/05-edr-alert-triage/triage%20testing%20finale%205.png)
+
 ## Evidence
 
 The [Stage 05 screenshot evidence](../../screenshots/05-edr-alert-triage/README.md) records the Postman queries, aggregation configuration, Atomic Red Team activity, n8n workflow and final triage output.
