@@ -4,27 +4,33 @@
 
 ## Objective
 
-Configure Linux audit collection with Auditd, forward the audit log through Wazuh and generate controlled endpoint activity with Atomic Red Team.
+Extend Linux endpoint visibility by collecting Auditd records with Wazuh and generating controlled activity with Atomic Red Team. This provides endpoint data that can be reviewed in Wazuh and queried by the automation workflows built later in the lab.
 
-## Implementation
+## Auditd and Wazuh configuration
 
-Auditd was installed and enabled on the Ubuntu endpoint. The Wazuh agent was configured to monitor:
+Auditd was installed and enabled on the Ubuntu endpoint. It records security relevant activity on the host, providing an additional source of operating system telemetry.
+
+The Wazuh agent was configured to monitor the Auditd log:
 
 ```text
 /var/log/audit/audit.log
 ```
 
-The agent was restarted and confirmed active.
+After updating the agent configuration, the service was restarted and checked to confirm that it was running with the change applied.
 
 ![Wazuh agent restarted and confirmed active](../../screenshots/02-auditd-atomic-red-team/01-configuring%20wazuh%20agent%20p2.png)
 
-Atomic Red Team was installed under `/opt/atomic-red-team`. After a Git clone failed during transfer, the collection was installed from an archive. The installation contained 354 Atomic tests.
+## Atomic Red Team setup and testing
 
-The atomics path was corrected to:
+Atomic Red Team was installed under `/opt/atomic-red-team`. A Git clone attempt failed during transfer, so the repository archive was used instead. The downloaded collection contained 354 Atomic tests.
+
+The initial test invocation referenced an incorrect atomics directory. The path was corrected to:
 
 ```text
 /opt/atomic-red-team/atomics
 ```
+
+Atomic tests were then used to generate controlled activity on the Ubuntu endpoint. This provides repeatable test activity that can be examined in the audit records and Wazuh alerts, rather than relying only on naturally occurring system events.
 
 ![Atomic Red Team installation](../../screenshots/02-auditd-atomic-red-team/02-atomic%20red%20team%20deployment%20p2.png)
 
@@ -32,23 +38,35 @@ The atomics path was corrected to:
 
 ## Telemetry flow
 
+The configured collection path is:
+
 ```text
-Ubuntu activity
-      |
-    Auditd
-      |
-audit.log
-      |
- Wazuh Agent
-      |
- Wazuh Manager
-      |
- Wazuh alerts
+Ubuntu endpoint activity
+        |
+        v
+Linux Audit Framework
+        |
+        v
+/var/log/audit/audit.log
+        |
+        v
+Wazuh Agent
+        |
+        v
+Wazuh Manager
+        |
+        v
+Wazuh alerts
+        |
+        v
+Analyst review and API queries
 ```
 
-## Results
+Auditd provides the endpoint audit records, while the Wazuh agent forwards the configured log to the manager for processing. Wazuh applies its decoders and rules to the collected data and makes generated alerts available for review and API retrieval.
 
-The Wazuh Overview dashboard showed 397 alerts in its last 24 hours view:
+## Observed results
+
+The Wazuh Overview dashboard showed 397 alerts in its last 24 hour view:
 
 | Severity | Alerts |
 |---|---:|
@@ -60,11 +78,11 @@ The Wazuh Overview dashboard showed 397 alerts in its last 24 hours view:
 
 ![Wazuh alert severity counts](../../screenshots/02-auditd-atomic-red-team/04-wazuh%20alerts%20dashboard%20p2.png)
 
-This is a point in time dashboard snapshot. It does not establish that every Atomic test generated a corresponding alert.
+These figures are a point in time snapshot of the dashboard. They represent the alert volume visible during the selected period and should not be treated as a one to one count of Atomic test executions.
 
 ## Outcome
 
-Auditd log collection was configured through the Wazuh agent, and Atomic Red Team was installed for controlled endpoint testing. The resulting Wazuh alert data provided telemetry for subsequent investigation and automation stages.
+Auditd was configured as an additional source of Linux endpoint telemetry, the Wazuh agent was set to collect its log, and Atomic Red Team was installed and used to generate controlled activity. The resulting Wazuh data provides material for the API queries, alert analysis and AI assisted triage developed in the later stages.
 
 ## Next stage
 
