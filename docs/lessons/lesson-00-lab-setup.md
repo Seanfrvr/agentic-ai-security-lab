@@ -10,7 +10,7 @@ Set up a local Ubuntu environment running Wazuh and n8n in Docker, connected thr
 
 | Item | Configuration |
 |---|---|
-| Host | MacBook Pro (Late 2013) |
+| Host | MacBook Pro |
 | Virtualisation | VirtualBox |
 | Operating system | Ubuntu 22.04 |
 | Docker | 29.9.3 |
