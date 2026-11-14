@@ -32,7 +32,7 @@ The lab follows the path from endpoint activity to security analysis:
 5. Use AI models to summarise alerts and support triage.
 6. Expand the environment toward threat hunting and attack chain investigation.
 
-The current build includes a Wazuh alert summarisation agent and an aggregation based EDR triage agent. Both use n8n and Google Gemini, with Wazuh Indexer providing the alert data.\n\nStage 06 is underway. A Docker hosted vulnerable web application has been added to the Ubuntu lab, and its harmless `whoami` HTTP request has been verified in the Wazuh archives index. Detection development and further attack simulation remain future work.
+The current build includes a Wazuh alert summarisation agent and an aggregation based EDR triage agent. Both use n8n and Google Gemini, with Wazuh Indexer providing the alert data.\n\nStage 06 is underway. A Docker hosted vulnerable web application has been added to the Ubuntu lab, and its harmless `whoami` HTTP request has been verified in the Wazuh archives index. Detection development and further attack simulation remain future work.\n\nStage 06 is underway. A Docker hosted vulnerable web application has been added to the Ubuntu lab, and its harmless `whoami` HTTP request has been verified in the Wazuh archives index. Detection development and further attack simulation remain future work.
 
 ## Repository structure
 
