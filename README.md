@@ -62,6 +62,9 @@ agentic-ai-security-lab/
 │   ├── 03-wazuh-api-postman/
 │   ├── 04-ai-cybersecurity-agent/
 │   ├── 05-edr-alert-triage/
+│   ├── 06-threat-hunter-improvements/
+│   ├── 07-endpoint-telemetry/
+│   ├── 08-attack-chain-investigation/
 │   └── README.md
 ├── .gitignore
 └── README.md
@@ -71,7 +74,7 @@ agentic-ai-security-lab/
 
 Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked from the relevant lesson.
 
-The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 05. Stage 06 through 08 screenshots are being transferred and reviewed before they are added to the repository. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
+The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 08. Each lesson links to its relevant screenshots. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
 
 See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification goals.
 
