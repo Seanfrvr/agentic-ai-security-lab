@@ -19,7 +19,7 @@ A stage is only marked complete after it has been built and verified.
 | 06 | Lab improvements for the threat hunter | [Threat hunter improvements](docs/lessons/lesson-06-threat-hunter-lab-improvements.md) | Complete for lab foundation scope |
 | 07 | Wazuh agents and Linux Auditd telemetry | [Endpoint telemetry](docs/lessons/lesson-07-endpoint-telemetry.md) | Complete for Linux telemetry scope |
 | 08 | Web attack simulation and investigation | [Attack chain investigation](docs/lessons/lesson-08-attack-chain-investigation.md) | Complete for web investigation scope |
-| 09 | AI threat hunter and model comparison | [AI threat hunter](docs/lessons/lesson-09-ai-threat-hunter.md) | Next |
+| 09 | AI threat hunter | [AI threat hunter](docs/lessons/lesson-09-ai-threat-hunter.md) | Complete for current investigation scope |
 
 ## Build approach
 
@@ -32,9 +32,9 @@ The lab follows the path from endpoint activity to security analysis:
 5. Use AI models to summarise alerts and support triage.
 6. Expand the environment toward threat hunting and attack chain investigation.
 
-The current build includes a Wazuh alert summarisation agent and an aggregation based EDR triage agent. Both use n8n and Google Gemini, with Wazuh Indexer providing the alert data.
+The current build includes a Wazuh alert summarisation agent, an aggregation based EDR triage agent and an AI threat hunting workflow. These use n8n and Google Gemini, with Wazuh Indexer providing access to alert data.
 
-Stages 07 and 08 have been verified within their current scope. Linux Auditd, authentication and system log telemetry is available in Wazuh. A controlled Kali to web application attack path has been investigated, and a custom Wazuh rule generates alerts for command parameter access. Windows telemetry, lateral movement and a separate Linux privilege escalation target remain possible future extensions.
+Stages 07 through 09 have been verified within their documented scope. Linux Auditd, authentication and system log telemetry is available in Wazuh. A controlled Kali to web application attack path has been investigated, and a custom Wazuh rule generates alerts for command parameter access. Windows telemetry, PowerShell activity, broader red team scenarios and a separate Linux privilege escalation target remain planned extensions.
 
 ## Repository structure
 
@@ -65,6 +65,7 @@ agentic-ai-security-lab/
 │   ├── 06-threat-hunter-improvements/
 │   ├── 07-endpoint-telemetry/
 │   ├── 08-attack-chain-investigation/
+│   ├── phase-09/
 │   └── README.md
 ├── .gitignore
 └── README.md
@@ -72,9 +73,9 @@ agentic-ai-security-lab/
 
 ## Documentation and evidence
 
-Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked from the relevant lesson.
+Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked selectively from the relevant lesson. Additional screenshots remain in their stage folders as supporting evidence rather than being embedded throughout the documentation.
 
-The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 08. Each lesson links to its relevant screenshots. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
+The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 09. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
 
 See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification goals.
 
