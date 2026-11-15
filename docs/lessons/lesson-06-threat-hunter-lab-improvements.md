@@ -129,10 +129,6 @@ Host browser
 - The current validation does not demonstrate Windows or Kali telemetry.
 - Detection logic, alert generation and response automation remain separate tasks.
 
-## Lab safety
-
-The application is intentionally vulnerable and is used only for controlled testing inside the local lab environment. It should not be exposed to public or untrusted networks.
-
 ## Outcome
 
 The lab now contains a controlled command injection test application, verified command execution under the web server account, host audit investigation evidence and a confirmed path for the application's Apache request log into searchable Wazuh archive data.
