@@ -129,11 +129,9 @@ Host browser
 - The current validation does not demonstrate Windows or Kali telemetry.
 - Detection logic, alert generation and response automation remain separate tasks.
 
-## Security and evidence handling
+## Lab safety
 
-The application is intentionally vulnerable and is intended only for controlled lab testing. Keep it off public networks.
-
-Review screenshots before publication. Redact credentials, tokens, private configuration, personal host details and unnecessary infrastructure identifiers. In particular, the deployment screenshot currently exposes the full Docker container ID. Replace it with a redacted copy before treating it as publication-ready evidence.
+The application is intentionally vulnerable and is used only for controlled testing inside the local lab environment. It should not be exposed to public or untrusted networks.
 
 ## Outcome
 
