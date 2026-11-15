@@ -65,7 +65,7 @@ agentic-ai-security-lab/
 │   ├── 06-threat-hunter-improvements/
 │   ├── 07-endpoint-telemetry/
 │   ├── 08-attack-chain-investigation/
-│   ├── phase-09/
+│   ├── 09-ai-threat-hunter/
 │   └── README.md
 ├── .gitignore
 └── README.md
@@ -75,7 +75,7 @@ agentic-ai-security-lab/
 
 Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked selectively from the relevant lesson. Additional screenshots remain in their stage folders as supporting evidence rather than being embedded throughout the documentation.
 
-The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 09. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
+The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 09. Stage 09 evidence is stored in [09-ai-threat-hunter](screenshots/09-ai-threat-hunter/). Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
 
 See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification goals.
 
