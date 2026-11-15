@@ -23,7 +23,7 @@ The workflow uses an n8n AI Agent connected to Google Gemini 2.5 Flash. An analy
 
 The workflow supports analyst investigation. It does not automatically isolate endpoints, disable accounts or make changes to the environment.
 
-![AI Threat Hunter workflow](../../screenshots/phase-09/01-ai-threat-hunter-workflow.png)
+![AI Threat Hunter workflow](../../screenshots/09-ai-threat-hunter/01-ai-threat-hunter-workflow.png)
 
 ## Agent configuration
 
@@ -31,13 +31,13 @@ The agent was configured for SOC threat hunting and DFIR analysis. Its instructi
 
 The instructions also require it to distinguish attempted activity from confirmed execution, avoid unsupported claims, identify evidence gaps and recommend practical remediation. MITRE ATT&CK techniques should only be included where the available findings support the mapping.
 
-![AI agent configuration](../../screenshots/phase-09/02-agent%20message%20and%20role%20assign.png)
+![AI agent configuration](../../screenshots/09-ai-threat-hunter/02-agent%20message%20and%20role%20assign.png)
 
 ## Investigation and findings
 
 The workflow was tested with questions covering suspicious activity, command execution, initial access, post compromise activity and the wider attack chain. The agent returned investigation findings, supporting evidence and remediation guidance.
 
-![Investigation findings](../../screenshots/phase-09/04-incident%20findings.png)
+![Investigation findings](../../screenshots/09-ai-threat-hunter/04-incident%20findings.png)
 
 The investigation drew on Wazuh data collected during the earlier endpoint and web attack stages. One important detection was custom Rule ID `100100`, titled `Web application command parameter accessed`. It is a Level 8 rule that identifies requests accessing the vulnerable application's `cmd` parameter. Eight matching alerts were observed.
 
@@ -45,7 +45,7 @@ This rule identifies access to the command parameter. On its own, it does not pr
 
 An Indexer query returned 38 matching records for `ubuntu-local`: 30 records titled `Auditd: Device enables promiscuous mode.` and eight records titled `Web application command parameter accessed`. The response contained aggregation results but no individual event documents. These two finding types were therefore kept separate rather than treated as one attack sequence.
 
-![Wazuh detections](../../screenshots/phase-09/09-wazuh%20detections.png)
+![Wazuh detections](../../screenshots/09-ai-threat-hunter/09-wazuh%20detections.png)
 
 ## MITRE ATT&CK and evidence gaps
 
@@ -55,13 +55,13 @@ For example, searching for SUID files is file and directory discovery. It does n
 
 The available Indexer response did not always include individual event documents or the fields needed to independently reconstruct each command execution. Findings therefore had to be assessed within the limits of the returned data and the earlier lab evidence.
 
-![MITRE ATT&CK mapping](../../screenshots/phase-09/10-mitre%20attack%20mappings.png)
+![MITRE ATT&CK mapping](../../screenshots/09-ai-threat-hunter/10-mitre%20attack%20mappings.png)
 
 ## Final investigation report
 
 The final prompt asked the agent to consolidate the investigation into a DFIR report covering the attack, confirmed findings, affected systems, security impact, Wazuh detections, severity and recommended remediation.
 
-![Final investigation report](../../screenshots/phase-09/12-incident%20report.png)
+![Final investigation report](../../screenshots/09-ai-threat-hunter/12-incident%20report.png)
 
 ## Evaluation and limitations
 
