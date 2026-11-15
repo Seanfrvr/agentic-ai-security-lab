@@ -4,7 +4,7 @@
 
 ## Objective
 
-Extend the existing security lab to support future attack simulation, endpoint investigation and AI-assisted threat hunting. This stage introduces host audit evidence and a controlled vulnerable web application, while establishing the telemetry collection and indexing required to investigate activity through Wazuh.
+Extend the existing security lab to support future attack simulation, endpoint investigation and AI assisted threat hunting. This stage introduces host audit evidence and a controlled vulnerable web application, while establishing the telemetry collection and indexing required to investigate activity through Wazuh.
 
 The environment will serve as a foundation for subsequent attack chain exercises and the development of the AI Threat Hunter Agent.
 
