@@ -6,18 +6,18 @@ The stages are organised around the build sequence and the capabilities being im
 
 ## Build stages
 
-| Stage | Focus | What I will verify |
-|---|---|---|
-| 00 | Ubuntu, Docker, Wazuh and n8n environment | Services start, local access works and containers can communicate |
-| 01 | Wazuh and n8n architecture with attack simulation | An isolated test produces telemetry that can be followed through Wazuh |
-| 02 | Auditd and Wazuh integration with Atomic Red Team | Audit events are collected and controlled test activity is visible |
-| 03 | Wazuh API exploration with Postman | Authentication works and selected API responses are understood |
-| 04 | AI cybersecurity agent with n8n and Wazuh | The workflow retrieves security data and produces a traceable summary |
-| 05 | EDR alert triage agent | Aggregated alert data is assessed and returned with prioritised findings |
-| 06 | Lab improvements for threat hunting | Improvements to the lab are implemented and checked |
-| 07 | Wazuh agents, Auditd and Sysmon telemetry | Endpoint sources send useful telemetry into the monitoring stack |
-| 08 | Attack chain simulation and investigation | Controlled activity can be correlated into an investigation timeline |
-| 09 | AI threat hunter and model comparison | The agent is tested against defined cases and model results are compared |
+| Stage | Focus | What I will verify | Status |
+|---|---|---|---|
+| 00 | Ubuntu, Docker, Wazuh and n8n environment | Services start, local access works and containers can communicate | Complete |
+| 01 | Wazuh and n8n architecture with attack simulation | An isolated test produces telemetry that can be followed through Wazuh | Complete |
+| 02 | Auditd and Wazuh integration with Atomic Red Team | Audit events are collected and controlled test activity is visible | Complete |
+| 03 | Wazuh API exploration with Postman | Authentication works and selected API responses are understood | Complete |
+| 04 | AI cybersecurity agent with n8n and Wazuh | The workflow retrieves security data and produces a traceable summary | Complete |
+| 05 | EDR alert triage agent | Aggregated alert data is assessed and returned with prioritised findings | Complete |
+| 06 | Lab improvements for threat hunting | Improvements to the lab are implemented and checked | In progress |
+| 07 | Wazuh agents and Linux Auditd telemetry | Linux Auditd, authentication and system events reach Wazuh | Complete for Linux scope |
+| 08 | Web attack simulation and investigation | Web activity is traced through application logs, Wazuh telemetry and custom alerts | Complete for web scope |
+| 09 | AI threat hunter and model comparison | The agent is tested against defined cases and model results are compared | Next |
 
 ## Evidence standard
 
@@ -31,7 +31,11 @@ Each stage should contain evidence that supports its implementation and results.
 6. Record failures, fixes and known limitations.
 7. Explain relevant security controls and cost implications.
 
-A stage remains **Not started** until work begins. It becomes **In progress** during implementation and **Complete** only after its verification checks pass. If a component only partly works, document that accurately rather than marking the entire stage complete.
+A stage remains **Not started** until work begins. It becomes **In progress** during implementation and **Complete** only after its defined verification checks pass. If a component only partly works, document that accurately rather than marking the entire stage complete.
+
+## Future expansion
+
+Windows event collection with Sysmon, RDP authentication testing, SSH pivoting and a separate disposable Linux privilege escalation target are potential additions. They are not required to begin Stage 09 because the current web attack path and Linux telemetry already provide evidence for the AI threat hunting workflow.
 
 ## Cost and isolation
 
