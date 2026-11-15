@@ -1,6 +1,6 @@
 # Stage 06: Threat hunter lab improvements
 
-<sup>Status: In progress</sup>
+<sup>Status: Complete for the lab foundation scope</sup>
 
 ## Objective
 
@@ -135,7 +135,7 @@ Host browser
 
 The lab now contains a controlled command injection test application, verified command execution under the web server account, host audit investigation evidence and a confirmed path for the application's Apache request log into searchable Wazuh archive data.
 
-Stage 06 remains in progress while detection development and further investigation are built and validated.
+The lab foundation objectives for this stage are complete. Detection development and the extended attack investigation are documented in Stage 08.
 
 ## Evidence
 
