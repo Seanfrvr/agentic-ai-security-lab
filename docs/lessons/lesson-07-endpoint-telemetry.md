@@ -32,6 +32,10 @@ The rules covered:
 
 The rules were loaded with `augenrules` and checked with `auditctl -l`. Controlled tests confirmed that Python execution and a file permission change produced Auditd records.
 
+![Python execution Auditd rule configuration](../../screenshots/07-endpoint-telemetry/01-python%20config.png)
+
+![Auditd event recorded for the Python execution rule](../../screenshots/07-endpoint-telemetry/02-priv%20esaclation.png)
+
 The Auditd log was collected by Wazuh Agent 007. In Wazuh Discover, the event was visible in `wazuh-archives-*` with the Auditd decoder and fields including the event key, executable, command and user identifiers.
 
 ## Authentication and system log collection
@@ -45,6 +49,10 @@ The agent configuration was updated to collect the existing host log sources:
 | `/var/log/syslog` | Host service and system messages | Events visible in Wazuh |
 
 The new entries were placed inside the existing `<ossec_config>` structure. The Wazuh log collector configuration was tested and the agent restarted successfully.
+
+![Authentication events collected from auth.log](../../screenshots/07-endpoint-telemetry/03-auth.log%20event.png)
+
+![System events collected from syslog](../../screenshots/07-endpoint-telemetry/04-syslog%20events.png)
 
 Authentication events included PAM session open and close records and sudo activity. These records provide context for host administration and authentication investigations. They must not be attributed to the Kali attacker unless the event evidence supports that conclusion.
 
