@@ -101,6 +101,8 @@ The Apache records included:
 
 The events were visible in the `wazuh-archives-*` data view. The relevant records used the JSON decoder and identified the Docker JSON log as their source.
 
+![Kali web requests visible in Wazuh telemetry](../../screenshots/08-attack-chain-investigation/08-wazuh-kali-attack-telemetry.png)
+
 The verified telemetry path:
 
 ```text
