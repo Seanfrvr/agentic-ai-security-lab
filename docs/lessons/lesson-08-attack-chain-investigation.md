@@ -38,6 +38,14 @@ The Kali container was used to identify and assess the web service.
 | GoSpider | Link and page crawling | No additional crawlable pages identified |
 | FFUF | Query parameter discovery | Identified `cmd` as a parameter with a distinct response size |
 
+![Kali attacker container connectivity](../../screenshots/08-attack-chain-investigation/01-kali-attacker-connectivity.png)
+
+![Nmap web service discovery](../../screenshots/08-attack-chain-investigation/02-nmap-web-service-discovery.png)
+
+![HTTP service enumeration](../../screenshots/08-attack-chain-investigation/03-http-service-enumeration.png)
+
+![Nikto web server assessment](../../screenshots/08-attack-chain-investigation/07-nikto-web-server-assessment.png)
+
 Nikto findings were treated as assessment observations, not as confirmed exploitable vulnerabilities. The GoSpider result reflected the limited single page application surface.
 
 ## Command injection validation
@@ -52,6 +60,12 @@ The application accepts a GET parameter named `cmd` and passes its value to a sy
 | `uname -a` | Linux kernel and architecture details | Reveals container runtime system information |
 
 The results demonstrate command execution inside the vulnerable application container. They do not demonstrate root access or compromise of the Ubuntu host.
+
+![Command injection confirmed with whoami](../../screenshots/08-attack-chain-investigation/04-command-injection-whoami.png)
+
+![Command execution identity and context](../../screenshots/08-attack-chain-investigation/05-command-execution-context.png)
+
+![Web application attack surface and command parameter](../../screenshots/08-attack-chain-investigation/06-web-application-attack-surface.png)
 
 ## SUID and container boundary inspection
 
@@ -68,6 +82,10 @@ The process security status was then inspected through `/proc/self/status`. The 
 | `Seccomp` | `2` | Seccomp filtering is active |
 
 This confirmed that the application process runs with a restricted privilege boundary. No privilege escalation was performed. The Ubuntu orchestrator was not modified with a SUID Python configuration because it also hosts the security stack.
+
+![SUID enumeration request from Kali](../../screenshots/08-attack-chain-investigation/11-root%20kali%20request.png)
+
+![SUID inspection and execution context](../../screenshots/08-attack-chain-investigation/12-root%20id%20engineering.png)
 
 ## Apache telemetry and Wazuh ingestion
 
@@ -110,6 +128,18 @@ A local Wazuh rule was added to `local_rules.xml`:
 | Group | `web_attack_surface` |
 
 The rule was tested with `wazuh-logtest` before the Manager was restarted. A live request then generated a Level 8 alert, which was confirmed first in the Manager's `alerts.json` file and then in the Indexer and Wazuh Threat Hunting.
+
+![Custom Wazuh rule configuration](../../screenshots/08-attack-chain-investigation/09-detection%20engineering.png)
+
+![Custom detection rule validation](../../screenshots/08-attack-chain-investigation/10-detection%20engineering%20p1,2,3.png)
+
+![Custom Wazuh detection alert](../../screenshots/08-attack-chain-investigation/13-custom-wazuh-detection-alert.png)
+
+![Additional command parameter detections](../../screenshots/08-attack-chain-investigation/14-custom-rule-detection-coverage.png)
+
+![Related Wazuh security telemetry](../../screenshots/08-attack-chain-investigation/15-wazuh-correlated-security-telemetry.png)
+
+![Wazuh security telemetry during investigation](../../screenshots/08-attack-chain-investigation/16-wazuh%20sec%20telementry.png)
 
 Eight matching custom alerts were visible during the investigation. The rule detects use of the application's command parameter. It does not determine whether a command is malicious, prove privilege escalation, or independently identify a specific MITRE ATT&CK technique. No MITRE mapping was assigned to this custom rule.
 
