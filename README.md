@@ -75,7 +75,7 @@ agentic-ai-security-lab/
 
 Each lesson page records its objective, architecture, implementation, testing results and limitations. Screenshots are stored by stage and linked selectively from the relevant lesson. Additional screenshots remain in their stage folders as supporting evidence rather than being embedded throughout the documentation.
 
-The [screenshots directory](screenshots/) contains evidence for lab setup and Stages 02 through 09. Stage 09 evidence is stored in [09-ai-threat-hunter](screenshots/09-ai-threat-hunter/). Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
+The [screenshots directory](https://github.com/Seanfrvr/agentic-ai-security-lab/blob/main/screenshots) contains evidence for lab setup and Stages 00 through 09. Stage 01 has an architecture review in the lesson documentation, but does not currently have a dedicated screenshot folder.
 
 See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification goals.
 
@@ -91,6 +91,3 @@ See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification
 
 An independently built home lab exploring Wazuh monitoring, endpoint detection, security automation, AI assisted alert triage and threat hunting.
 
-## Phase 09 evidence
-
-The [Phase 09 AI Threat Hunter screenshots](screenshots/09-ai-threat-hunter/) contain the supporting evidence for the workflow, investigation findings, Wazuh detections, MITRE ATT&CK mapping and final report.
