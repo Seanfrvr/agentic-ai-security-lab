@@ -14,10 +14,10 @@ The stages are organised around the build sequence and the capabilities being im
 | 03 | Wazuh API exploration with Postman | Authentication works and selected API responses are understood | Complete |
 | 04 | AI cybersecurity agent with n8n and Wazuh | The workflow retrieves security data and produces a traceable summary | Complete |
 | 05 | EDR alert triage agent | Aggregated alert data is assessed and returned with prioritised findings | Complete |
-| 06 | Lab improvements for threat hunting | Improvements to the lab are implemented and checked | In progress |
-| 07 | Wazuh agents and Linux Auditd telemetry | Linux Auditd, authentication and system events reach Wazuh | Complete for Linux scope |
-| 08 | Web attack simulation and investigation | Web activity is traced through application logs, Wazuh telemetry and custom alerts | Complete for web scope |
-| 09 | AI threat hunter and model comparison | The agent is tested against defined cases and model results are compared | Next |
+| 06 | Lab improvements for threat hunting | Improvements to the lab are implemented and checked | Complete |
+| 07 | Wazuh agents and Linux Auditd telemetry | Linux Auditd, authentication and system events reach Wazuh | Complete |
+| 08 | Web attack simulation and investigation | Web activity is traced through application logs, Wazuh telemetry and custom alerts | Complete |
+| 09 | AI threat hunter | The agent retrieves indexed security data and returns evidence based investigation findings with documented limitations | Complete |
 
 ## Evidence standard
 
@@ -35,7 +35,7 @@ A stage remains **Not started** until work begins. It becomes **In progress** du
 
 ## Future expansion
 
-Windows event collection with Sysmon, RDP authentication testing, SSH pivoting and a separate disposable Linux privilege escalation target are potential additions. They are not required to begin Stage 09 because the current web attack path and Linux telemetry already provide evidence for the AI threat hunting workflow.
+Windows event collection with Sysmon, RDP authentication testing, SSH pivoting and a separate disposable Linux privilege escalation target are potential additions. They are optional extensions beyond the completed AI threat hunting workflow.
 
 ## Cost and isolation
 
