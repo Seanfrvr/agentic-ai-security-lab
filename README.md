@@ -90,3 +90,7 @@ See the [lab roadmap](docs/roadmap.md) for the planned sequence and verification
 ## About
 
 An independently built home lab exploring Wazuh monitoring, endpoint detection, security automation, AI assisted alert triage and threat hunting.
+
+## Phase 09 evidence
+
+The [Phase 09 AI Threat Hunter screenshots](screenshots/09-ai-threat-hunter/) contain the supporting evidence for the workflow, investigation findings, Wazuh detections, MITRE ATT&CK mapping and final report.
