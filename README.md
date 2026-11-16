@@ -16,10 +16,10 @@ A stage is only marked complete after it has been built and verified.
 | 03 | Wazuh API exploration with Postman | [API integration](docs/lessons/lesson-03-wazuh-api-postman.md) | Complete |
 | 04 | AI cybersecurity agent with n8n and Wazuh | [Alert summarisation](docs/lessons/lesson-04-ai-cybersecurity-agent.md) | Complete |
 | 05 | EDR alert triage agent | [Alert triage](docs/lessons/lesson-05-edr-alert-triage.md) | Complete |
-| 06 | Lab improvements for the threat hunter | [Threat hunter improvements](docs/lessons/lesson-06-threat-hunter-lab-improvements.md) | Complete for lab foundation scope |
-| 07 | Wazuh agents and Linux Auditd telemetry | [Endpoint telemetry](docs/lessons/lesson-07-endpoint-telemetry.md) | Complete for Linux telemetry scope |
-| 08 | Web attack simulation and investigation | [Attack chain investigation](docs/lessons/lesson-08-attack-chain-investigation.md) | Complete for web investigation scope |
-| 09 | AI threat hunter | [AI threat hunter](docs/lessons/lesson-09-ai-threat-hunter.md) | Complete for current investigation scope |
+| 06 | Lab improvements for the threat hunter | [Threat hunter improvements](docs/lessons/lesson-06-threat-hunter-lab-improvements.md) | Complete |
+| 07 | Wazuh agents and Linux Auditd telemetry | [Endpoint telemetry](docs/lessons/lesson-07-endpoint-telemetry.md) | Complete |
+| 08 | Web attack simulation and investigation | [Attack chain investigation](docs/lessons/lesson-08-attack-chain-investigation.md) | Complete |
+| 09 | AI threat hunter | [AI threat hunter](docs/lessons/lesson-09-ai-threat-hunter.md) | Complete |
 
 ## Build approach
 
